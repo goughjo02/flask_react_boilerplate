@@ -2,8 +2,15 @@ import os
 from flask_restful import Api, Resource, reqparse
 from flask import Flask, send_from_directory
 
+from flask import Flask, render_template
+from flask_socketio import SocketIO
+
+import asyncio
+import websockets
+
 app = Flask(__name__, static_folder='react_app/build')
 api = Api(app)
+socketio = SocketIO(app)
 
 # Serve React App
 @app.route('/', defaults={'path': ''})
@@ -28,4 +35,5 @@ def serve(path):
 # api.add_resource(Data, "/data")
 
 if __name__ == '__main__':
-    app.run(use_reloader=True, port=5000, threaded=True, debug=True)
+    socketio.run(app)
+    # app.run(use_reloader=True, port=5000, threaded=True, debug=True)

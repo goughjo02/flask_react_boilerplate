@@ -3,7 +3,7 @@ from flask_restful import Api, Resource, reqparse
 from flask import Flask, send_from_directory
 
 from flask import Flask, render_template
-from flask_socketio import SocketIO
+from flask_socketio import SocketIO, emit
 
 import asyncio
 import websockets
@@ -21,7 +21,10 @@ def serve(path):
     else:
         return send_from_directory('react_app/build', 'index.html')
 
-
+@socketio.on('connect')
+def connect_handler():
+    print("hello world")
+    emit('my response', {'data': 'Connected'})
 # class Data(Resource):
 #     def get(self, jwt):
 #         print(self)

@@ -24,6 +24,11 @@ def serve(path):
 @socketio.on('connect')
 def connect_handler():
     print("hello world")
+    emit('my_response', {'data': 'Connected'})
+
+@socketio.on('my_event')
+def connect_handler():
+    print("my event")
     emit('my response', {'data': 'Connected'})
 # class Data(Resource):
 #     def get(self, jwt):

@@ -2,10 +2,10 @@
 react_app/node_modules
 
 # testing
-react_app/coverage
+# react_app/coverage
 
 # production
-/build
+# /build
 
 # misc
 .DS_Store

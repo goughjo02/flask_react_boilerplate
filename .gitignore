@@ -1,20 +1,21 @@
 # dependencies
-react_app/node_modules
+react-app/node_modules
 
 # testing
-react_app/coverage
+react-app/coverage
 
 # production
 /build
 
 # misc
 .DS_Store
-react_app/.DS_STORE
-react_app/.env.local
-react_app/.env.development.local
-react_app/.env.test.local
-react_app/.env.production.local
+react-app/.DS_STORE
+react-app/node_modules
+react-app/.env.local
+react-app/.env.development.local
+react-app/.env.test.local
+react-app/.env.production.local
 
-react_app/npm-debug.log*
-react_app/yarn-debug.log*
-react_app/yarn-error.log*
+react-app/npm-debug.log*
+react-app/yarn-debug.log*
+react-app/yarn-error.log*

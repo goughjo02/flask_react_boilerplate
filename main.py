@@ -2,17 +2,17 @@ import os
 from flask_restful import Api, Resource, reqparse
 from flask import Flask, send_from_directory
 
-app = Flask(__name__, static_folder='react_app/build')
+app = Flask(__name__, static_folder='react-app/build')
 api = Api(app)
 
 # Serve React App
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
-    if path != "" and os.path.exists("react_app/build/" + path):
-        return send_from_directory('react_app/build', path)
+    if path != "" and os.path.exists("react-app/build/" + path):
+        return send_from_directory('react-app/build', path)
     else:
-        return send_from_directory('react_app/build', 'index.html')
+        return send_from_directory('react-app/build', 'index.html')
 
 
 # class Data(Resource):
